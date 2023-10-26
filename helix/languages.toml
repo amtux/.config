@@ -1,0 +1,7 @@
+[[language]]
+name = "go"
+indent = { tab-width = 2, unit = "t" }
+
+[[language]]
+name = "bash"
+file-types = ["conf", "config", "sh", "bash", "zsh", ".bash_login", ".bash_logout", ".bash_profile", ".bashrc", ".profile"]

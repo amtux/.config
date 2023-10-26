@@ -1,0 +1,34 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+mouse = true
+bufferline = "always"
+color-modes = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spacer", "version-control", "spinner"]
+center = ["file-name", "position-percentage"]
+right = ["diagnostics", "selections", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.indent-guides]
+render = true
+
+# Keys
+[keys.normal]
+# use L, H to switch between buffers
+L = ":bn"
+H = ":bp"
+
+X = "extend_line_up" # x to select down, X to select up
+
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"
