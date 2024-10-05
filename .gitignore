@@ -1,0 +1,13 @@
+*/
+
+!fish/
+!fish/*
+
+!kickstart/
+!kickstart/*
+
+!wezterm
+!wezterm/*
+
+!tmux/
+!tmux/*
