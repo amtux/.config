@@ -3,8 +3,8 @@
 !fish/
 !fish/*
 
-!kickstart/
-!kickstart/*
+!nvim/
+!nvim/*
 
 !wezterm
 !wezterm/*
