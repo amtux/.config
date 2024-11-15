@@ -1,13 +1,13 @@
 */
 
 !fish/
-!fish/*
+!fish/**
 
 !nvim/
-!nvim/*
+!nvim/**
 
 !wezterm
-!wezterm/*
+!wezterm/**
 
 !tmux/
-!tmux/*
+!tmux/**
