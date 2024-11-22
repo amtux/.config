@@ -23,6 +23,9 @@ return {
 		bottom = 0,
 	},
 
+	-- increase fps
+	max_fps = 240,
+
 	-- key bindings
 	disable_default_key_bindings = true,
 	keys = {
