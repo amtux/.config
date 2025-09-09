@@ -1,13 +1,24 @@
-*/
+# --------------------------------------------------------------------------
+# This approach ignores all files and directories by default, and then
+# explicitly re-includes only the specific directories and files you want
+# to track.
+# --------------------------------------------------------------------------
 
+# Ignore everything in the repository
+*
+
+# Exclude the .gitignore file itself from being ignored
+!.gitignore
+
+# Explicitly re-include the specific directories you want to track
+# The trailing slash is crucial here to specify directories.
 !fish/
-!fish/**
-
 !nvim/
-!nvim/**
-
-!wezterm
-!wezterm/**
-
+!ghostty/
+!ghostty/*
 !tmux/
-!tmux/**
+
+# Add specific ignore rules for files within the tracked directories.
+# This rule will ignore any file with a .bak extension, even inside the
+# directories you are tracking.
+*.bak
