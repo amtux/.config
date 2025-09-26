@@ -11,14 +11,26 @@
 !.gitignore
 
 # Explicitly re-include the specific directories you want to track
-# The trailing slash is crucial here to specify directories.
+# Use /** to include all files and subdirectories recursively
 !fish/
+!fish/**
 !nvim/
+!nvim/**
 !ghostty/
-!ghostty/*
+!ghostty/**
 !tmux/
+!tmux/**
 
 # Add specific ignore rules for files within the tracked directories.
 # This rule will ignore any file with a .bak extension, even inside the
 # directories you are tracking.
 *.bak
+
+# macOS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
