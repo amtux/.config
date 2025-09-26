@@ -18,8 +18,6 @@
 !nvim/**
 !ghostty/
 !ghostty/**
-!tmux/
-!tmux/**
 
 # Add specific ignore rules for files within the tracked directories.
 # This rule will ignore any file with a .bak extension, even inside the
