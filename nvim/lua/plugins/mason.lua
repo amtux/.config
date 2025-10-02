@@ -27,6 +27,7 @@ return {
         "gofumpt", -- go formatter
         "yaml-language-server", -- yaml LSP
         "bash-language-server", -- bash LSP
+        "helm-ls",
       },
     },
   },
