@@ -1,34 +1,37 @@
 return {
-  {
-    "mason-org/mason.nvim",
-    dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
-    opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
+  "williamboman/mason.nvim",
+  dependencies = {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
+  cmd = "Mason",
+  opts = {
+    ui = {
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
       },
     },
   },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = {
+  config = function(_, opts)
+    require("mason").setup(opts)
+    require("mason-tool-installer").setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "cueimports", -- cue formatter
-        "cuelsp", -- cue LSP
-        "gopls", -- go LSP
-        "golangci-lint", -- go linter
-        "gofumpt", -- go formatter
-        "yaml-language-server", -- yaml LSP
-        "bash-language-server", -- bash LSP
+        -- Formatters
+        "prettier",
+        "stylua",
+        "gofumpt",
+        "shfmt",
+        -- Linters
+        "golangci-lint",
+        -- LSP servers
+        "lua-language-server",
+        "gopls",
+        "cuelsp",
+        "yaml-language-server",
+        "bash-language-server",
         "helm-ls",
       },
-    },
-  },
+    })
+  end,
 }
