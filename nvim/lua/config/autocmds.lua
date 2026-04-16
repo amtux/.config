@@ -47,12 +47,3 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
     vim.cmd("checktime")
   end,
 })
-
--- CUE comment style — may no longer be needed with newer treesitter/LSP support
--- vim.api.nvim_create_autocmd("FileType", {
---   group = vim.api.nvim_create_augroup("cue_commentstring", { clear = true }),
---   pattern = "cue",
---   callback = function()
---     vim.bo.commentstring = "// %s"
---   end,
--- })
