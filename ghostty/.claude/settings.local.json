@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ghostty:*)",
+      "WebFetch(domain:ghostty.org)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

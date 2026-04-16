@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
--- Better window navigation
+-- Window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
@@ -16,8 +16,9 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
+map("n", "<leader>x", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
--- Better indenting
+-- Better indenting (reselect after indent)
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -36,10 +37,10 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
--- Better paste
+-- Paste without yanking
 map("x", "<leader>p", [["_dP]], { desc = "Paste without yanking" })
 
--- Diagnostic keymaps
+-- Diagnostics
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error" })

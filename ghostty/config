@@ -1,6 +1,6 @@
 # appearance
-macos-titlebar-proxy-icon = "hidden"
-theme = catppuccin-mocha
+#macos-titlebar-proxy-icon = "hidden"
+theme = Catppuccin Mocha
 font-size = 14
 macos-option-as-alt = true
 unfocused-split-opacity=.8
@@ -42,8 +42,8 @@ keybind = alt+w=close_surface
 
 # - move around in
 # -- tabs
-keybind = alt+[=previous_tab
-keybind = alt+]=next_tab
+keybind = super+h=previous_tab
+keybind = super+l=next_tab
 # -- panes
 keybind = alt+h=goto_split:left
 keybind = alt+j=goto_split:bottom
@@ -52,10 +52,10 @@ keybind = alt+l=goto_split:right
 
 # - resize
 # -- tabs
-keybind = super+alt+h=resize_split:left,10
-keybind = super+alt+j=resize_split:down,10
-keybind = super+alt+k=resize_split:up,10
-keybind = super+alt+l=resize_split:right,10
+keybind = super+alt+h=resize_split:left,50
+keybind = super+alt+j=resize_split:down,50
+keybind = super+alt+k=resize_split:up,50
+keybind = super+alt+l=resize_split:right,50
 
 # - misc
 keybind = shift+enter=text:\n

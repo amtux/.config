@@ -1,12 +1,12 @@
--- Highlight on yank
+-- Briefly highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })
 
--- Resize splits on window resize
+-- Auto-equalize split sizes when the terminal window is resized
 vim.api.nvim_create_autocmd("VimResized", {
   group = vim.api.nvim_create_augroup("resize_splits", { clear = true }),
   callback = function()
@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("VimResized", {
   end,
 })
 
--- Close some filetypes with <q>
+-- Close help, quickfix, lspinfo, checkhealth windows with q
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
   pattern = {
@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Detect Helm templates and set filetype to helm
+-- Detect Helm chart templates and set filetype to helm
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   group = vim.api.nvim_create_augroup("helm_filetype", { clear = true }),
   pattern = { "*/templates/*.yaml", "*/templates/*.tpl", "**/templates/**/*.yaml" },
@@ -39,3 +39,20 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "helm"
   end,
 })
+
+-- Auto-reload files changed externally (e.g. git operations in another terminal)
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  group = vim.api.nvim_create_augroup("auto_reload", { clear = true }),
+  callback = function()
+    vim.cmd("checktime")
+  end,
+})
+
+-- CUE comment style — may no longer be needed with newer treesitter/LSP support
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = vim.api.nvim_create_augroup("cue_commentstring", { clear = true }),
+--   pattern = "cue",
+--   callback = function()
+--     vim.bo.commentstring = "// %s"
+--   end,
+-- })
