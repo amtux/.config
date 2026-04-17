@@ -15,6 +15,7 @@ local plugins = {
   ["which-key.nvim"] = { url = "https://github.com/folke/which-key.nvim.git" },
   ["gitlinker.nvim"] = { url = "https://github.com/linrongbin16/gitlinker.nvim.git" },
   ["nvim-web-devicons"] = { url = "https://github.com/nvim-tree/nvim-web-devicons.git" },
+  ["mini.pairs"] = { url = "https://github.com/echasnovski/mini.pairs.git" },
 }
 
 local function ensure_plugin(name, spec)

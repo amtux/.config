@@ -34,8 +34,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gI", vim.lsp.buf.implementation, "Go to implementation")
     map("gD", vim.lsp.buf.declaration, "Go to declaration")
     map("K", vim.lsp.buf.hover, "Hover documentation")
-    map("<leader>D", vim.lsp.buf.type_definition, "Type definition")
-    map("<leader>ds", vim.lsp.buf.document_symbol, "Document symbols")
+    map("<leader>cs", vim.lsp.buf.document_symbol, "Document symbols")
     map("<leader>ws", vim.lsp.buf.workspace_symbol, "Workspace symbols")
     map("<leader>cr", vim.lsp.buf.rename, "Rename")
     map("<leader>ca", vim.lsp.buf.code_action, "Code action")
@@ -81,6 +80,16 @@ vim.lsp.config("cue", {
   root_markers = { "cue.mod", ".git" },
 })
 
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      check = {
+        command = "clippy",
+      },
+    },
+  },
+})
+
 vim.lsp.config("bashls", {})
 
 vim.lsp.config("yamlls", {
@@ -105,4 +114,4 @@ vim.lsp.config("helm_ls", {
   },
 })
 
-vim.lsp.enable({ "lua_ls", "gopls", "cue", "bashls", "yamlls", "helm_ls" })
+vim.lsp.enable({ "lua_ls", "gopls", "rust_analyzer", "cue", "bashls", "yamlls", "helm_ls" })

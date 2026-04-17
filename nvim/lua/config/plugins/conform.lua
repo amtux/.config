@@ -5,6 +5,7 @@ require("conform").setup({
     fish = { "fish_indent" },
     sh = { "shfmt" },
     go = { "gofumpt" },
+    rust = { "rustfmt" },
     cue = { "cuefmt" },
     javascript = { "prettier" },
     typescript = { "prettier" },

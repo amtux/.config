@@ -28,7 +28,12 @@ vim.opt.undolevels = 10000      -- 10k undo steps (default 1000)
 vim.opt.swapfile = false        -- no .swp files
 vim.opt.backup = false          -- no ~ backup files
 vim.opt.clipboard = "unnamedplus" -- yank/paste uses system clipboard
-vim.opt.completeopt = "menu,menuone,noselect" -- completion popup: show menu, don't auto-select
+-- completeopt controls the completion popup behavior:
+--   menu     — show popup menu when there are multiple matches
+--   menuone  — show popup even when there's only one match
+--   noinsert — preselect first item but don't insert until confirmed (C-y accepts)
+--   noselect — don't preselect any item (must C-n first, then C-y to accept)
+vim.opt.completeopt = "menu,menuone,noinsert"
 
 -- Splits
 vim.opt.splitright = true       -- vsplit opens to the right
@@ -46,7 +51,9 @@ vim.opt.listchars = { tab = "│ ", trail = "·", nbsp = "␣" } -- render tabs,
 
 -- Diagnostics
 vim.diagnostic.config({
-  virtual_text = true,          -- show diagnostic messages inline at end of line
+  virtual_text = false,
+  -- show full diagnostics on their own lines below the code, only for current cursor line
+  virtual_lines = { current_line = true },
   signs = true,                 -- show error/warning icons in sign column
   underline = true,             -- underline problematic code
   update_in_insert = false,     -- don't update while typing, wait until leaving insert

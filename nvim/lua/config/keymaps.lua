@@ -43,5 +43,18 @@ map("x", "<leader>p", [["_dP]], { desc = "Paste without yanking" })
 -- Diagnostics
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
-map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic quickfix list" })
+
+map("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Diagnostic quickfix list" })
+map("n", "<leader>dy", function()
+  local d = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
+  if #d == 0 then
+    vim.notify("No diagnostics on this line")
+    return
+  end
+  local msgs = {}
+  for _, diag in ipairs(d) do
+    table.insert(msgs, diag.message)
+  end
+  vim.fn.setreg("+", table.concat(msgs, "\n"))
+  vim.notify("Yanked " .. #d .. " diagnostic(s)")
+end, { desc = "Yank diagnostic message" })

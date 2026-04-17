@@ -59,8 +59,8 @@ Leader key: `<Space>`
 | `gI` | Go to implementation |
 | `gD` | Go to declaration |
 | `K` | Hover documentation |
-| `<leader>D` | Type definition |
-| `<leader>ds` | Document symbols |
+
+| `<leader>cs` | Document symbols |
 | `<leader>ws` | Workspace symbols |
 | `<leader>cr` | Rename |
 | `<leader>ca` | Code action |
@@ -69,8 +69,8 @@ Leader key: `<Space>`
 | Key | Action |
 |---|---|
 | `[d` / `]d` | Previous / next diagnostic |
-| `<leader>e` | Show diagnostic float |
-| `<leader>q` | Diagnostic quickfix list |
+| `<leader>dq` | Diagnostic quickfix list |
+| `<leader>dy` | Yank diagnostic message |
 
 ### Git (gitsigns)
 | Key | Action |
@@ -148,11 +148,12 @@ Leader key: `<Space>`
 9. which-key.nvim — keybinding help popup
 10. gitlinker.nvim — GitHub file links
 11. nvim-web-devicons — file icons
+12. mini.pairs — auto-close brackets, quotes, and indent between pairs on enter
 
 ## External Dependencies
 
 Run `install-deps.sh` to install all dependencies, or install manually:
 
 **Treesitter**: `tree-sitter-cli`
-**LSP servers**: `lua-language-server`, `gopls`, `cue`, `bash-language-server`, `yaml-language-server`, `helm-ls`
-**Formatters**: `prettier`, `stylua`, `shfmt`, `gofumpt`
+**LSP servers**: `lua-language-server`, `gopls`, `rust-analyzer`, `cue`, `bash-language-server`, `yaml-language-server`, `helm-ls`
+**Formatters**: `prettier`, `stylua`, `shfmt`, `gofumpt`, `rustfmt`
